@@ -19,8 +19,10 @@ class UserForm(FlaskForm):
         validators.DataRequired(message="El campo es requerido"),
         validators.length(min=4, max=10, message="Ingrese un nombre valido")
         ])
-    apaterno=StringField("apaterno", [
+    apellidos=StringField("apellidos", [
         validators.DataRequired(message="El campo es requerido")])
     correo=EmailField("correo", [
+        validators.DataRequired(message="El campo es requerido")])
+    telefono=StringField("telefono", [
         validators.DataRequired(message="El campo es requerido")])
    

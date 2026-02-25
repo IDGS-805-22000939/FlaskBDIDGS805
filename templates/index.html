@@ -20,8 +20,9 @@
             <thead class="text-xs uppercase bg-gray-100 text-gray-700">
                 <tr>
                     <th class="px-6 py-3">Nombre</th>
-                    <th class="px-6 py-3">Apellido Paterno</th>
+                    <th class="px-6 py-3">Apellidos</th>
                     <th class="px-6 py-3">Email</th>
+                    <th class="px-6 py-3">Telefono</th>
                     <th class="px-6 py-3 text-center">Acciones</th>
                 </tr>
             </thead>
@@ -36,16 +37,19 @@
                     </td>
 
                     <td class="px-6 py-4">
-                        {{ alum.apaterno }}
+                        {{ alum.apellidos }}
                     </td>
 
                     <td class="px-6 py-4">
                         {{ alum.email }}
                     </td>
+                    <td class="px-6 py-4">
+                        {{ alum.telefono }}
+                    </td>
 
                     <td class="px-6 py-4 text-center space-x-2">
 
-                        <a href="#"
+                        <a href="modificar?id={{ alum.id }}"
                            class="px-3 py-1 text-xs text-white bg-yellow-500 rounded-lg
                                   hover:bg-yellow-600 transition">
                             Editar
@@ -57,7 +61,7 @@
                             Detalles
                         </a>
 
-                        <a href="#"
+                        <a href="eliminar?id={{ alum.id }}"
                            class="px-3 py-1 text-xs text-white bg-red-600 rounded-lg
                                   hover:bg-red-700 transition">
                             Eliminar
