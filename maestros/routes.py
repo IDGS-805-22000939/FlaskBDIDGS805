@@ -36,7 +36,9 @@ def info():
         apellidos=maes1.apellidos
         especialidad=maes1.especialidad
         email=maes1.email
-    return render_template('maestros/info.html', id=id,nombre=nombre,apellidos=apellidos,especialidad=especialidad,email=email)
+        cursos=maes1.cursos
+    return render_template('maestros/info.html', id=id,nombre=nombre,apellidos=apellidos,
+                           especialidad=especialidad,email=email,cursos=cursos)
 
 
 @maestros.route("/editarMa", methods=['GET','POST'])

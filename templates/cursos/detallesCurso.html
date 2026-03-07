@@ -1,29 +1,34 @@
 {% extends "layout.html" %} {% block container %}
 <div class="group py-32 relative overflow-x-auto sm:rounded-lg">
 <div class="relative bg-neutral-primary-soft max-w-xs w-full p-6 border border-default rounded-base shadow-xs">
+    <div id="dropdown" class="z-10 bg-neutral-primary-medium border border-default-medium rounded-base shadow-lg w-36 block hidden">
+    </div>
+   
 <div class="flex flex-col items-center">
-    <img class="w-10 h-10 mb-6 rounded-full" src="/static/img/user.png" alt="Bonnie image"/>
     <h5 class="mb-0.5 text-xl font-semibold tracking-tight text-heading">
-        Nombre: {{nombre}} {{apellidos}}
+        Curso: {{cursos.nombre}}
     </h5><br>
     <h3 class="mb-0.5 text-xl font-semibold tracking-tight text-heading">
-        Especialidad: {{especialidad}}
+        Descripcion: {{cursos.descripcion}}
     </h3><br>
     <h3 class="mb-0.5 text-xl font-semibold tracking-tight text-heading">
-        Email: {{email}}
+        Maestro: {{ cursos.maestro.nombre }} {{ cursos.maestro.apellidos }}
     </h3><br>
-    <h3 class="mb-0.5 text-xl font-semibold tracking-tight text-heading">
-            Cursos que imparte:
-    </h3>
-        
-        <ul>
-        {% for curso in cursos %}
-            <li>{{ curso.nombre }}</li>
+    <h3>Alumnos inscritos:</h3><br>
+    <table class="text-center text-gray-800">
+    <tr>
+        <th class="px-2">Nombre</th>
+        <th class="px-2">Apellidos</th>
+    </tr>
+        {% for alumno in alumnos %}
+    <tr>
+        <td class="px-2">{{ alumno.nombre }}</td>
+        <td class="px-2">{{ alumno.apellidos }}</td>
+    </tr>
         {% endfor %}
-        </ul>
-
+    </table>
     <div class="flex mt-4 md:mt-6 gap-4">
-        <a href="{{ url_for('maestros.maestro') }}"
+        <a href="{{ url_for('cursos.curso') }}"
            class="px-6 py-2 bg-blue-600 text-white rounded-xl shadow-md
                   hover:bg-blue-700 hover:scale-105 transition duration-300">
             Regresar
@@ -32,4 +37,6 @@
         </div>
     </div>
 </div>
+
 {% endblock %}
+

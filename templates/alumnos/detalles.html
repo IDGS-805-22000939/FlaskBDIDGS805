@@ -7,23 +7,22 @@
         Nombre: {{nombre}} {{apellidos}}
     </h5><br>
     <h3 class="mb-0.5 text-xl font-semibold tracking-tight text-heading">
-        Especialidad: {{especialidad}}
+        Correo: {{email}}
     </h3><br>
     <h3 class="mb-0.5 text-xl font-semibold tracking-tight text-heading">
-        Email: {{email}}
+        Telefono: {{telefono}}
     </h3><br>
     <h3 class="mb-0.5 text-xl font-semibold tracking-tight text-heading">
-            Cursos que imparte:
+        Cursos Inscritos:
     </h3>
-        
+    
         <ul>
-        {% for curso in cursos %}
-            <li>{{ curso.nombre }}</li>
+        {% for alum in cursos %}
+            <li>{{ alum.nombre }}</li>
         {% endfor %}
         </ul>
-
     <div class="flex mt-4 md:mt-6 gap-4">
-        <a href="{{ url_for('maestros.maestro') }}"
+        <a href="{{ url_for('alumnos.alumno') }}"
            class="px-6 py-2 bg-blue-600 text-white rounded-xl shadow-md
                   hover:bg-blue-700 hover:scale-105 transition duration-300">
             Regresar
